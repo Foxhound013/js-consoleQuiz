@@ -1,2 +1,4 @@
 # js-consoleQuiz
-A simple quiz game built for the browsers console. The browser will prompt the user to answer the questions displayed in the console. As the player answer correctly, he/she gains points. This was built to develop a deeper understanding of function constructors. When running this code, the inspection tool needs to be opened first, otherwise there is a bug that will prevent the console from displaying the questions (although you're still playing the game). If the error arises, exit the game by typing "exit" and reload, the questions should begin to appear in the console. This will be fixed in a future update.
+A simple quiz game built for the browsers console. The browser will prompt the user to answer the questions displayed in the console. As the player answer correctly, he/she gains points. This was built to develop a deeper understanding of function constructors. When running this code, make certain that chome dev tools are open first and switch to the console window.
+
+Note: There is a promise warning that will display on exit. This doesn't appear to affect the game in any adverse way. An update will be issued if a fix can be determined.
