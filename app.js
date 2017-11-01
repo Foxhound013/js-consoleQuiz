@@ -1,14 +1,15 @@
 //IIFE in order to privatize the entire game.
-(function () {
+//(function () {
     var Question = function (questionText, answers, correctAnswer, pointValue) {
         this.questionText = questionText;
         this.answers = answers; //an array of answers
         this.correctAnswer = correctAnswer; //refers to the index of the correct answer in answers
         //An object method for checking the users answer
         this.checkAnswer = function(usersAnswer) {
-            if (usersAnswer == (currentQuestion.correctAnswer + 1)) {
+            if (Number(usersAnswer) === (currentQuestion.correctAnswer + 1)) {
                 console.log("===================");
                 console.log("Correct Answer!\n\n");
+                score += pointValue;
                 return(true); //continue the game
             } else if (usersAnswer === "exit") {
                 console.log("Bye!");
@@ -19,14 +20,13 @@
                 console.log("Better luck next time?");
                 return(true); //continue the game
             }
-        }
+        };
         this.pointValue = pointValue; //assign point values to each question
         //An object method to display the score after each guess
         this.displayScore = function() {
-            score += pointValue;
-            console.log("Your score is now: " + score + "\n\n");
-        }
-    }
+            console.log("Your current score is: " + score + "\n\n");
+        };
+    };
 
 
     //instantiate the first question for the game
@@ -53,12 +53,14 @@
         for (var i = 0; i < currentQuestion.answers.length; i++) {
             console.log(currentQuestion.answers[i]);
         }
-
-        var usersAnswer = window.prompt("Please select the correct answer (just type the number). Or type \"exit\" to quit.");
+      
+        var usersAnswer = prompt("Please select the correct answer (just type the number). Or type \"exit\" to quit.");
+      
+        
 
         //check the answer, if the user enters exit then gameOn is set to false, otherwise it will be left as undefined.
         gameOn = currentQuestion.checkAnswer(usersAnswer);
         currentQuestion.displayScore();
     };
      
-}) ();
+//}) ();
