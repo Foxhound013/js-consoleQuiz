@@ -13,7 +13,7 @@
         if (Number(usersAnswer) === (currentQuestion.correctAnswer + 1)) {
             console.log("===================");
             console.log("Correct Answer!\n\n");
-            score += pointValue;
+            score += currentQuestion.pointValue;
             return(true); //continue the game
         } else if (usersAnswer === "exit") {
             console.log("Bye!");
